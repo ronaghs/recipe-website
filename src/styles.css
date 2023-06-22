@@ -1,0 +1,369 @@
+.loginText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-left: 0.25rem;
+}
+
+.login {
+  display: flex;
+  padding: 1rem;
+  order: 1;
+}
+
+.logo {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: cyan;
+}
+
+/* STYLING FOR ALL CUSINE AND SEARCH BAR SECTION */
+
+.active {
+  background-color: #b9bab8;
+  cursor: pointer;
+  border-radius: 25%;
+}
+
+.foodCarousel {
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 1rem;
+}
+
+.foodIcons {
+  display: inline-block;
+  text-align: center;
+  margin-left: 3.25rem;
+  margin-right: 3.25rem;
+}
+
+.foodPics {
+  font-size: 3rem;
+}
+
+.foodIcons p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.searchModal {
+  margin-left: auto;
+  display: flex;
+  order: 1;
+}
+
+@media (max-width: 600px) {
+  .foodIcons {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+/* Styling for the food card */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* margin-left: 5rem;
+  margin-right: 5rem; */
+}
+/* these margins look solid for laptop/desktop screens but make it very bad for mobile so perhaps make them a conditionally rendered thing */
+.prepTime {
+  display: flex;
+  align-items: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.imageContainer {
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+.plusIcon {
+  position: absolute;
+  right: 0%;
+  padding: 0.1rem;
+  font-size: 2rem;
+  z-index: 1;
+}
+
+.cardFooter {
+  margin-top: -0.5rem;
+}
+
+.starIcon,
+.clockIcon {
+  margin-right: 0.25rem;
+}
+
+.chakrauiCard {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+/* Divider styling */
+
+/* .dividerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-left: 2rem;
+  margin-right: 2rem;
+} */
+/* LEAVING THIS CSS HERE BUT LET IT BE KNOWN IT SEEMS TO DO NOTHING, IN FACT IT GETS IN THE THE WAY OF THE .DIVIDER CSS BELOW */
+
+.divider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.drinksButton:hover {
+  background-color: black;
+  color: cyan;
+}
+
+/* Section title styling. I.e. featured meals, easy weeknight meals, etc */
+.sectionTitles {
+  font-size: 1.75rem;
+  margin-left: 0.25rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Page with Recipes styling */
+.recipeImage {
+  margin-left: 7rem;
+  margin-right: auto;
+}
+
+.recipeButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  margin-right: 15%;
+  margin-left: 50%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.activeButton {
+  background: lightgray;
+}
+
+.instructionsContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.instructions {
+  padding: 1rem;
+  margin-left: 1rem;
+}
+
+.ingredients {
+  margin-right: auto;
+}
+
+.cardTitle {
+  margin-bottom: 1rem;
+}
+
+.recipeImage {
+  max-width: 35rem;
+  max-height: 23rem;
+}
+
+.plusIconWrapper {
+  position: relative;
+}
+
+.plusIcon {
+  color: gray;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.plusIcon:hover {
+  color: #32cd32;
+}
+
+.checkmark:hover {
+  color: #ff0000;
+}
+
+.plusIcon.plus:before {
+  content: "Add to Fav";
+  position: absolute;
+  top: -25px;
+  left: -35px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.plusIcon.checkmark:before {
+  content: "Remove";
+  position: absolute;
+  top: -25px;
+  left: -35px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  pointer-events: none;
+}
+
+.plusIcon.plus:hover:before {
+  opacity: 1;
+}
+
+.plusIcon.checkmark:hover:before {
+  opacity: 1;
+}
+
+.chakrauiCard {
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1);
+  display: flex;
+  margin: 1rem;
+}
+
+.chakrauiCard:hover {
+  transform: scale(1.03);
+}
+
+.foodPics {
+  display: inline-block;
+  transition: transform 0.2s ease-out;
+}
+
+.foodPics:hover {
+  transform: scale(1.1) rotate(-5deg);
+  border-radius: 25%;
+  font-size: 2.5rem;
+}
+
+/* Navbar Styles */
+
+.menuButton {
+  margin-right: 10px;
+}
+
+.menuButton {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+/* Hamburger Icon Styles */
+.hamburger-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #fff; /* Adjust the color as needed */
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-icon svg {
+  width: 20px; /* Adjust the icon size as needed */
+  height: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 10px;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  opacity: 97%;
+}
+
+@media (max-width: 1438px) {
+  .logo {
+    display: flex;
+    margin-left: auto;
+    order: 1;
+    color: cyan;
+  }
+
+  .hamburger-icon {
+    display: flex; /* Show the hamburger icon on smaller screens */
+    order: -1; /* Set the order to -1, so the hamburger icon appears first in the flex layout */
+  }
+}
+
+.recipeButtonContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.activeButton {
+  background: lightgray;
+}
+
+.instructionsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.recipeImage {
+  height: auto;
+  margin-right: 1rem;
+}
+
+.detailsContainer {
+  width: 50%;
+}
+
+@media (max-width: 1200px) {
+  .recipeImage {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1rem;
+  }
+
+  .detailsContainer {
+    width: 100%;
+  }
+
+  .recipeButtonContainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+  }
+
+  .instructionsContainer {
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+  }
+}
