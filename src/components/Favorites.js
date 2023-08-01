@@ -1,5 +1,4 @@
 import React from "react";
-// import { Avatar, Wrap, WrapItem } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -9,7 +8,7 @@ function Favorites() {
   return (
     <div className="login">
       <Link to={"/Favorite/test"}>
-        <Button colorScheme="red">
+        <Button colorScheme="red" aria-label="View favorite recipes">
           <FaHeart className="userIcon" />
         </Button>
       </Link>

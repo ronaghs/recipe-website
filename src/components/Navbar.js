@@ -12,7 +12,6 @@ import Logo from "./Logo";
 import Favorites from "./Favorites";
 import { Hamburger } from "./Hamburger";
 import { useState, useEffect } from "react";
-import { SearchBar } from "../Recipes/SearchBar";
 import { SearchModal } from "./SearchModal";
 
 export function Navbar() {
@@ -33,9 +32,9 @@ export function Navbar() {
   }, []);
 
   return (
-    <div className="header">
+    <header className="header">
       <Logo />
-      <div className="navbar">
+      <nav className="navbar">
         {showDropdowns ? (
           <>
             <Menu>
@@ -50,7 +49,7 @@ export function Navbar() {
                 </Text>
               </MenuButton>
               <MenuList>
-                <NavLink to={"/mea/breakfast"}>
+                <NavLink to={"/meal/breakfast"}>
                   <MenuItem>Breakfast</MenuItem>
                 </NavLink>
                 <NavLink to={"/meal/main course"}>
@@ -164,12 +163,11 @@ export function Navbar() {
             </Menu>
           </>
         ) : (
-          //***********************hamburger menu ****************/
           <Hamburger />
         )}
-      </div>
+      </nav>
       <SearchModal />
       <Favorites />
-    </div>
+    </header>
   );
 }

@@ -40,13 +40,15 @@ export function Recipes() {
   }, [parameter.id]);
 
   return (
-    <div>
-      <Navbar />
-      <Cusines />
+    <>
+      <header>
+        <Navbar />
+        <Cusines />
+      </header>
       <Divider />
 
       <h1 className="sectionTitles">{recipe.title}</h1>
-      <div className="recipeButtonContainer">
+      <nav className="recipeButtonContainer">
         <Button
           onClick={() => setActive("Recipe")}
           className={active === "Recipe" ? "activeButton" : ""}
@@ -68,8 +70,8 @@ export function Recipes() {
         >
           Nutrition
         </Button>
-      </div>
-      <div className="instructionsContainer">
+      </nav>
+      <section className="instructionsContainer">
         <Image
           className="recipeImage"
           borderRadius="md"
@@ -103,7 +105,7 @@ export function Recipes() {
             </>
           )}
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }

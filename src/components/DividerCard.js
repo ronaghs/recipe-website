@@ -21,6 +21,7 @@ export function DividerCard() {
       image:
         "https://thumbs.dreamstime.com/b/set-various-cocktails-black-background-set-various-cocktails-shaker-black-background-188649840.jpg",
       alt: "drinks",
+      label: "Explore drink recipes",
       path: "/drink/cocktail",
     },
     {
@@ -30,6 +31,7 @@ export function DividerCard() {
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRml5NcdcQTmm2Fl40TRNmxuqFftXjfTZl_2w&usqp=CAU",
       alt: "desserts",
+      label: "Explore dessert recipes",
       path: "/meal/dessert",
     },
   ];
@@ -75,6 +77,7 @@ export function DividerCard() {
                   variant="outline"
                   colorScheme="black"
                   alignSelf={{ base: "center", sm: "unset" }}
+                  aria-label={divider.label}
                 >
                   {divider.button}
                 </Button>

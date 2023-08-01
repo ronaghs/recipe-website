@@ -5,20 +5,11 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
-  IconButton,
   Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
   Button,
-  Input,
 } from "@chakra-ui/react";
 import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
@@ -29,7 +20,12 @@ export function Hamburger() {
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="cyan" onClick={onOpen}>
+      <Button
+        ref={btnRef}
+        colorScheme="cyan"
+        onClick={onOpen}
+        aria-label="Menu"
+      >
         <HamburgerIcon />
       </Button>
       <Drawer

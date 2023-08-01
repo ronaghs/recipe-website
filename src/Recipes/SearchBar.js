@@ -1,7 +1,6 @@
 import React from "react";
 import { Input, Stack, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
-import { useState } from "react";
 
 export function SearchBar({ onChange, value, onKeyPress }) {
   return (

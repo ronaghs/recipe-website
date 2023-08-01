@@ -41,9 +41,14 @@ export function PlusIcon({ recipe }) {
         <FaTrashAlt
           className="plusIcon checkmark"
           title="Remove from favorites"
+          aria-label="Remove from favorites"
         />
       ) : (
-        <FaPlusCircle className="plusIcon plus" title="Add to favorites" />
+        <FaPlusCircle
+          className="plusIcon plus"
+          title="Add to favorites"
+          aria-label="Add to favorites"
+        />
       )}
     </div>
   );
