@@ -22,7 +22,7 @@ export function Hamburger() {
     <>
       <Button
         ref={btnRef}
-        colorScheme="cyan"
+        colorScheme="#5BC94A"
         onClick={onOpen}
         aria-label="Menu"
       >
@@ -39,7 +39,7 @@ export function Hamburger() {
           <DrawerCloseButton />
           <Menu>
             <MenuButton
-              colorScheme="cyan"
+              backgroundColor="limegreen"
               className="menuButton"
               as={Button}
               rightIcon={<ChevronDownIcon />}
@@ -66,7 +66,7 @@ export function Hamburger() {
           </Menu>{" "}
           <Menu>
             <MenuButton
-              colorScheme="cyan"
+              backgroundColor="limegreen"
               className="menuButton"
               as={Button}
               rightIcon={<ChevronDownIcon />}
@@ -84,7 +84,7 @@ export function Hamburger() {
           </Menu>{" "}
           <Menu>
             <MenuButton
-              colorScheme="cyan"
+              backgroundColor="limegreen"
               className="menuButton"
               as={Button}
               rightIcon={<ChevronDownIcon />}
@@ -102,7 +102,7 @@ export function Hamburger() {
           </Menu>{" "}
           <Menu>
             <MenuButton
-              colorScheme="cyan"
+              backgroundColor="limegreen"
               className="menuButton"
               as={Button}
               rightIcon={<ChevronDownIcon />}
@@ -132,7 +132,7 @@ export function Hamburger() {
           </Menu>{" "}
           <Menu>
             <MenuButton
-              colorScheme="cyan"
+              backgroundColor="limegreen"
               className="menuButton"
               as={Button}
               rightIcon={<ChevronDownIcon />}

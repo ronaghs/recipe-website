@@ -69,7 +69,7 @@ export function SearchModal() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="cyan" mr={3} onClick={searchHandler}>
+            <Button backgroundColor="limegreen" mr={3} onClick={searchHandler}>
               Go
             </Button>
           </ModalFooter>

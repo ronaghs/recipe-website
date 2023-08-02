@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Divider } from "@chakra-ui/react";
-
 import { Navbar } from "../components/Navbar";
-import { Cusines } from "../components/Cusines";
+import { Cuisines } from "../components/Cuisines";
 import { useParams } from "react-router-dom";
 import { RecipeCard } from "../components/RecipeCard";
+import { motion } from "framer-motion";
 
 export function CuisineFilters() {
   const [mealType, setMealType] = useState([]);
@@ -13,7 +13,7 @@ export function CuisineFilters() {
 
   const getMealType = async (type) => {
     const api = await fetch(
-      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=41&cuisine=${type}&type=main course,side dish,appetizer,salad,snack&addRecipeInformation=true&instructionsRequired=true&sort=popularity&sortDirection=desc`
+      `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=40&cuisine=${type}&type=main course,side dish,appetizer,salad,snack&addRecipeInformation=true&instructionsRequired=true&sort=popularity&sortDirection=desc`
     );
     console.log(api);
     const data = await api.json();
@@ -50,12 +50,17 @@ export function CuisineFilters() {
   const capitalString = arr.join(" ");
 
   return (
-    <div>
+    <motion.div
+      className="cuisineResults"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Navbar />
-      <Cusines />
+      <Cuisines />
       <Divider />
       <h1 className="sectionTitles">{capitalString} Recipes</h1>
       <div className="card">{recipes}</div>
-    </div>
+    </motion.div>
   );
 }

@@ -39,7 +39,7 @@ export function Navbar() {
           <>
             <Menu>
               <MenuButton
-                colorScheme="cyan"
+                backgroundColor="limegreen"
                 className="menuButton"
                 as={Button}
                 rightIcon={<ChevronDownIcon />}
@@ -68,7 +68,7 @@ export function Navbar() {
             </Menu>{" "}
             <Menu>
               <MenuButton
-                colorScheme="cyan"
+                backgroundColor="limegreen"
                 className="menuButton"
                 as={Button}
                 rightIcon={<ChevronDownIcon />}
@@ -88,7 +88,7 @@ export function Navbar() {
             </Menu>{" "}
             <Menu>
               <MenuButton
-                colorScheme="cyan"
+                backgroundColor="limegreen"
                 className="menuButton"
                 as={Button}
                 rightIcon={<ChevronDownIcon />}
@@ -108,7 +108,7 @@ export function Navbar() {
             </Menu>{" "}
             <Menu>
               <MenuButton
-                colorScheme="cyan"
+                backgroundColor="limegreen"
                 className="menuButton"
                 as={Button}
                 rightIcon={<ChevronDownIcon />}
@@ -140,7 +140,7 @@ export function Navbar() {
             </Menu>{" "}
             <Menu>
               <MenuButton
-                colorScheme="cyan"
+                backgroundColor="limegreen"
                 className="menuButton"
                 as={Button}
                 rightIcon={<ChevronDownIcon />}

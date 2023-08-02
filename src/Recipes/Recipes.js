@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Navbar } from "../components/Navbar";
-import { Cusines } from "../components/Cusines";
+import { Cuisines } from "../components/Cuisines";
 import { useParams } from "react-router-dom";
 import { Divider, Button } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
 import "../styles.css";
 import { ListItem, List, Checkbox, Stack } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 export function Recipes() {
   const [recipe, setRecipe] = useState({});
@@ -40,72 +41,80 @@ export function Recipes() {
   }, [parameter.id]);
 
   return (
-    <>
+    <motion.div
+      className="recipeInfo"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <header>
         <Navbar />
-        <Cusines />
+        <Cuisines />
       </header>
       <Divider />
-
-      <h1 className="sectionTitles">{recipe.title}</h1>
-      <nav className="recipeButtonContainer">
-        <Button
-          onClick={() => setActive("Recipe")}
-          className={active === "Recipe" ? "activeButton" : ""}
-          variant="outline"
-        >
-          Recipe
-        </Button>
-        <Button
-          onClick={() => setActive("Ingredients")}
-          className={active === "Ingredients" ? "activeButton" : ""}
-          variant="outline"
-        >
-          Ingredients
-        </Button>
-        <Button
-          onClick={() => setActive("Nutrition")}
-          className={active === "Nutrition" ? "activeButton" : ""}
-          variant="outline"
-        >
-          Nutrition
-        </Button>
-      </nav>
-      <section className="instructionsContainer">
-        <Image
-          className="recipeImage"
-          borderRadius="md"
-          src={recipe.image}
-          alt={recipe.title}
-        />
-        <div className="detailsContainer">
-          {active === "Recipe" && (
-            <>
-              <div
-                dangerouslySetInnerHTML={{ __html: recipe.instructions }}
-              ></div>
-            </>
-          )}
-          {active === "Ingredients" && (
-            <>
-              <List className="ing">
-                <Stack spacing={0} direction="column">
-                  {recipe.extendedIngredients.map((ingredient) => (
-                    <Checkbox colorScheme="green" key={ingredient.id}>
-                      <ListItem>{ingredient.original}</ListItem>
-                    </Checkbox>
-                  ))}
-                </Stack>
-              </List>
-            </>
-          )}
-          {active === "Nutrition" && (
-            <>
-              <Image src={nutritionImage} alt="Nutrition Facts" />
-            </>
-          )}
-        </div>
-      </section>
-    </>
+      <main>
+        <h1 className="sectionTitles">{recipe.title}</h1>
+        <section className="recipeButtonContainer">
+          <Button
+            onClick={() => setActive("Recipe")}
+            className={active === "Recipe" ? "activeButton" : ""}
+            variant="outline"
+          >
+            Recipe
+          </Button>
+          <Button
+            onClick={() => setActive("Ingredients")}
+            className={active === "Ingredients" ? "activeButton" : ""}
+            variant="outline"
+          >
+            Ingredients
+          </Button>
+          <Button
+            onClick={() => setActive("Nutrition")}
+            className={active === "Nutrition" ? "activeButton" : ""}
+            variant="outline"
+          >
+            Nutrition
+          </Button>
+        </section>
+        <section className="instructionsContainer">
+          <Image
+            className="recipeImage"
+            borderRadius="md"
+            src={recipe.image}
+            alt={recipe.title}
+          />
+          <div className="detailsContainer">
+            {active === "Recipe" && (
+              <>
+                <div
+                  dangerouslySetInnerHTML={{ __html: recipe.instructions }}
+                ></div>
+              </>
+            )}
+            {active === "Ingredients" && (
+              <>
+                <List className="ing">
+                  <Stack spacing={0} direction="column">
+                    {recipe.extendedIngredients.map((ingredient) => (
+                      <Checkbox colorScheme="green" key={ingredient.id}>
+                        <ListItem aria-label={ingredient.original}>
+                          {ingredient.original}
+                        </ListItem>
+                      </Checkbox>
+                    ))}
+                  </Stack>
+                </List>
+              </>
+            )}
+            {active === "Nutrition" && (
+              <>
+                <Image src={nutritionImage} alt="Nutrition Facts" />
+              </>
+            )}
+          </div>
+        </section>
+      </main>
+    </motion.div>
   );
 }

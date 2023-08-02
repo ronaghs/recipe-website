@@ -1,19 +1,27 @@
 import React from "react";
-import { Cusines } from "./Cusines";
+import { Cuisines } from "./Cuisines";
 import { Navbar } from "./Navbar";
 import { DividerCard } from "./DividerCard";
 import { Popular } from "./Popular";
 import { Divider } from "@chakra-ui/react";
+import { Greeting } from "./Greeting";
+import { motion } from "framer-motion";
 
 export function MainPage() {
   return (
-    <div>
+    <motion.div
+      className="mainPage"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Navbar />
-      <Cusines />
+      <Cuisines />
+      <Greeting />
       <DividerCard />
       <Divider />
-      <h1 className="sectionTitles">Popular Meals</h1>
+      <h3 className="sectionTitles">Popular Meals</h3>
       <Popular />
-    </div>
+    </motion.div>
   );
 }

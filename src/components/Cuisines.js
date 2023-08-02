@@ -2,7 +2,7 @@ import React from "react";
 import "../styles.css";
 import { NavLink } from "react-router-dom";
 
-export function Cusines() {
+export function Cuisines() {
   return (
     <div className="foodCarousel">
       <div className="foodIcons">

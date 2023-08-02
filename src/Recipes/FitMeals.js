@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Divider } from "@chakra-ui/react";
-
 import { Navbar } from "../components/Navbar";
-import { Cusines } from "../components/Cusines";
+import { Cuisines } from "../components/Cuisines";
 import { useParams } from "react-router-dom";
 import { RecipeCard } from "../components/RecipeCard";
+import { motion } from "framer-motion";
 
 export function FitMeals() {
   const [mealType, setMealType] = useState([]);
@@ -45,12 +45,17 @@ export function FitMeals() {
   const capitalString = arr.join(" ");
 
   return (
-    <div>
+    <motion.div
+      className="cuisineResults"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Navbar />
-      <Cusines />
+      <Cuisines />
       <Divider />
       <h1 className="sectionTitles">High Protein {capitalString} Recipes</h1>
       <div className="card">{recipes}</div>
-    </div>
+    </motion.div>
   );
 }

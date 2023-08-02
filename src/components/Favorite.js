@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Divider } from "@chakra-ui/react";
-
 import "../styles.css";
 import { Navbar } from "./Navbar";
-import { Cusines } from "./Cusines";
+import { Cuisines } from "./Cuisines";
 import { RecipeCard } from "../components/RecipeCard";
+import { motion } from "framer-motion";
 
 export function Favorite() {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -40,12 +40,16 @@ export function Favorite() {
   });
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Navbar />
-      <Cusines />
+      <Cuisines />
       <Divider />
       <h1 className="sectionTitles">Favorite Recipes</h1>
       <div className="card">{recipes}</div>;
-    </div>
+    </motion.div>
   );
 }
