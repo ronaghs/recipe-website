@@ -1,15 +1,15 @@
 import React from "react";
-import { MainPage } from "./MainPage";
-import { CuisineFilters } from "../Recipes/CuisineFilters";
-import { Meals } from "../Recipes/Meals";
-import { Diets } from "../Recipes/Diets";
-import { FitMeals } from "../Recipes/FitMeals";
-import { OnePot } from "../Recipes/OnePot";
-import { QuickEasyMeals } from "../Recipes/QuickEasyMeals";
-import { SearchedResults } from "../Recipes/SearchedResults";
-import { Recipes } from "../Recipes/Recipes";
-import { Cocktails } from "../Recipes/Cocktails";
-import { Favorite } from "./Favorite";
+import { MainPage } from "../HomePage/MainPage";
+import { CuisineFilters } from "../RecipePages/CuisineFilters";
+import { Meals } from "../RecipePages/Meals";
+import { Diets } from "../RecipePages/Diets";
+import { FitMeals } from "../RecipePages/FitMeals";
+import { OnePot } from "../RecipePages/OnePot";
+import { QuickEasyMeals } from "../RecipePages/QuickEasyMeals";
+import { SearchedResults } from "../RecipePages/SearchedResults";
+import { Recipes } from "../RecipePages/Recipes";
+import { Cocktails } from "../RecipePages/Cocktails";
+import { Favorite } from "../RecipePages/Favorite";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 

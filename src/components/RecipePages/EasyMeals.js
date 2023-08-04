@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { RecipeCard } from "./RecipeCard";
+import { RecipeCard } from "../Common/RecipeCard";
+
+//Custom hooks
+import { toCapitalCase } from "../../utils/toCapitalCase";
+import { useFavorites } from "../../utils/useFavorites";
 
 export function EasyMeals() {
   const [easyMeals, setEasyMeals] = useState([]);
-  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+
+  //Destructure favoriteRecipes array, addFavorite function, and removeFavorite function from the useFavorites() hook.
+  const { favoriteRecipes, addFavorite, removeFavorite } = useFavorites();
 
   useEffect(() => {
     getEasyMeals();
@@ -24,16 +30,16 @@ export function EasyMeals() {
       console.log(data);
     }
   };
-  const deleteRecipe = (recipe) => {
-    const key = `recipe_${recipe.id}`;
-    localStorage.removeItem(key);
-    const newFavorites = favoriteRecipes.filter((fav) => fav.id !== recipe.id);
-    setFavoriteRecipes(newFavorites);
-  };
 
   const recipes = easyMeals.map((recipe) => {
     return (
-      <RecipeCard key={recipe.id} recipe={recipe} deleteRecipe={deleteRecipe} />
+      <RecipeCard
+        key={recipe.id}
+        recipe={recipe}
+        favoriteRecipes={favoriteRecipes}
+        addFavorite={addFavorite}
+        removeFavorite={removeFavorite}
+      />
     );
   });
 

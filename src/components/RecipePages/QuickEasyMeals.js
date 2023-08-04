@@ -1,14 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Divider } from "@chakra-ui/react";
-import { Navbar } from "../components/Navbar";
-import { Cuisines } from "../components/Cuisines";
+import { Navbar } from "../Layout/Navbar/Navbar";
+import { Cuisines } from "../Layout/Cuisines";
 import { useParams } from "react-router-dom";
-import { RecipeCard } from "../components/RecipeCard";
+import { RecipeCard } from "../Common/RecipeCard";
 import { motion } from "framer-motion";
+
+//Custom hooks
+import { toCapitalCase } from "../../utils/toCapitalCase";
+import { useFavorites } from "../../utils/useFavorites";
 
 export function QuickEasyMeals() {
   const [mealType, setMealType] = useState([]);
-  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+
+  //Destructure favoriteRecipes array, addFavorite function, and removeFavorite function from the useFavorites() hook.
+  const { favoriteRecipes, addFavorite, removeFavorite } = useFavorites();
+
   let parameter = useParams();
 
   const getMealType = async (type) => {
@@ -20,13 +27,6 @@ export function QuickEasyMeals() {
     console.log(data);
   };
 
-  const deleteRecipe = (recipe) => {
-    const key = `recipe_${recipe.id}`;
-    localStorage.removeItem(key);
-    const newFavorites = favoriteRecipes.filter((fav) => fav.id !== recipe.id);
-    setFavoriteRecipes(newFavorites);
-  };
-
   useEffect(() => {
     getMealType(parameter.type);
   }, [parameter.type]);
@@ -35,16 +35,19 @@ export function QuickEasyMeals() {
 
   const recipes = filteredMealType.map((recipe) => {
     return (
-      <RecipeCard key={recipe.id} recipe={recipe} deleteRecipe={deleteRecipe} />
+      <RecipeCard
+        key={recipe.id}
+        recipe={recipe}
+        favoriteRecipes={favoriteRecipes}
+        addFavorite={addFavorite}
+        removeFavorite={removeFavorite}
+      />
     );
   });
 
-  let str = `${parameter.type}`;
-  const arr = str.split(" ");
-  for (var i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-  }
-  const capitalString = arr.join(" ");
+  //Utility function to capitalize the first letter of the cuisine type and/or the title of each page.
+  //Cuisine names/page titles are dynamically obtained using useParams.
+  const capitalString = toCapitalCase(parameter.type);
 
   return (
     <motion.div

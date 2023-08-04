@@ -9,10 +9,10 @@ import {
 import { NavLink } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import Logo from "./Logo";
-import Favorites from "./Favorites";
-import { Hamburger } from "./Hamburger";
+import FavoritesButton from "./FavoritesButton";
+import { Hamburger } from "../../Common/Hamburger";
 import { useState, useEffect } from "react";
-import { SearchModal } from "./SearchModal";
+import { SearchModal } from "../../Common/SearchModal";
 
 export function Navbar() {
   const [showDropdowns, setShowDropdowns] = useState(true);
@@ -167,7 +167,7 @@ export function Navbar() {
         )}
       </nav>
       <SearchModal />
-      <Favorites />
+      <FavoritesButton />
     </header>
   );
 }

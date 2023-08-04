@@ -10,7 +10,7 @@ import {
   useMediaQuery,
 } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
-import "../styles.css";
+import "../../styles.css";
 
 export function DividerCard() {
   const dividerData = [

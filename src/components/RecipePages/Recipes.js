@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from "../components/Navbar";
-import { Cuisines } from "../components/Cuisines";
+import { Navbar } from "../Layout/Navbar/Navbar";
+import { Cuisines } from "../Layout/Cuisines";
 import { useParams } from "react-router-dom";
 import { Divider, Button } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import "../styles.css";
+import "../../styles.css";
 import { ListItem, List, Checkbox, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 

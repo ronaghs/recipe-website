@@ -12,7 +12,7 @@ import {
 import { FaRegClock } from "react-icons/fa";
 import { AiFillLike } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import "../styles.css";
+import "../../styles.css";
 import { PlusIcon } from "./FavoriteButton";
 
 export function RecipeCard(props) {

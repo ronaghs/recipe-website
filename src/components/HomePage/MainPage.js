@@ -1,6 +1,6 @@
 import React from "react";
-import { Cuisines } from "./Cuisines";
-import { Navbar } from "./Navbar";
+import { Cuisines } from "../Layout/Cuisines";
+import { Navbar } from "../Layout/Navbar/Navbar";
 import { DividerCard } from "./DividerCard";
 import { Popular } from "./Popular";
 import { Divider } from "@chakra-ui/react";

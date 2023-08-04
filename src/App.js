@@ -1,5 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import AnimatedRoutes from "./components/AnimatedRoutes";
+import AnimatedRoutes from "./components/routes/AnimatedRoutes";
 import "./styles.css";
 
 function App() {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../styles.css";
-import { RecipeCard } from "./RecipeCard";
+import "../../styles.css";
+import { RecipeCard } from "../Common/RecipeCard";
 
 export function Popular() {
   const [popular, setPopular] = useState([]);

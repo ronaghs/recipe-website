@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Divider } from "@chakra-ui/react";
-import "../styles.css";
-import { Navbar } from "./Navbar";
-import { Cuisines } from "./Cuisines";
-import { RecipeCard } from "../components/RecipeCard";
+import "../../styles.css";
+import { Navbar } from "../Layout/Navbar/Navbar";
+import { Cuisines } from "../Layout/Cuisines";
+import { RecipeCard } from "../Common/RecipeCard";
 import { motion } from "framer-motion";
+
+//Custom hooks
+import { toCapitalCase } from "../../utils/toCapitalCase";
+import { useFavorites } from "../../utils/useFavorites";
 
 export function Favorite() {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -20,11 +24,6 @@ export function Favorite() {
 
     setFavoriteRecipes(recipes);
   }, []);
-
-  const saveRecipe = (recipe) => {
-    localStorage.setItem(`recipe_${recipe.id}`, JSON.stringify(recipe));
-    setFavoriteRecipes([...favoriteRecipes, recipe]);
-  };
 
   const deleteRecipe = (recipe) => {
     const key = `recipe_${recipe.id}`;

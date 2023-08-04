@@ -11,7 +11,7 @@ import {
   Button,
   FormControl,
 } from "@chakra-ui/react";
-import { SearchBar } from "../Recipes/SearchBar";
+import { SearchBar } from "./SearchBar";
 import { useNavigate } from "react-router-dom";
 import { SearchIcon } from "@chakra-ui/icons";
 
@@ -44,7 +44,7 @@ export function SearchModal() {
   return (
     <div className="searchModal">
       <Button onClick={onOpen}>
-        <SearchIcon />
+        <SearchIcon aria-label="Search for a recipe" />
       </Button>
 
       <Modal

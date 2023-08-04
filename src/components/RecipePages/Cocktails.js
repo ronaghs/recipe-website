@@ -1,14 +1,23 @@
+//Cocktail recipes
+
 import React, { useState, useEffect } from "react";
 import { Divider } from "@chakra-ui/react";
-import { Navbar } from "../components/Navbar";
-import { Cuisines } from "../components/Cuisines";
+import { Navbar } from "../Layout/Navbar/Navbar";
+import { Cuisines } from "../Layout/Cuisines";
 import { useParams } from "react-router-dom";
-import { RecipeCard } from "../components/RecipeCard";
+import { RecipeCard } from "../Common/RecipeCard";
 import { motion } from "framer-motion";
+
+//Custom hooks
+import { toCapitalCase } from "../../utils/toCapitalCase";
+import { useFavorites } from "../../utils/useFavorites";
 
 export function Cocktails() {
   const [drinkType, setDrinkType] = useState([]);
-  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+
+  //Destructure favoriteRecipes array, addFavorite function, and removeFavorite function from the useFavorites() hook.
+  const { favoriteRecipes, addFavorite, removeFavorite } = useFavorites();
+
   let parameter = useParams();
 
   const getDrinkType = async () => {
@@ -20,13 +29,6 @@ export function Cocktails() {
     setDrinkType(data.results);
   };
 
-  const deleteRecipe = (recipe) => {
-    const key = `recipe_${recipe.id}`;
-    localStorage.removeItem(key);
-    const newFavorites = favoriteRecipes.filter((fav) => fav.id !== recipe.id);
-    setFavoriteRecipes(newFavorites);
-  };
-
   useEffect(() => {
     getDrinkType(parameter.type);
     console.log(parameter.type);
@@ -34,16 +36,19 @@ export function Cocktails() {
 
   const recipes = drinkType.map((recipe) => {
     return (
-      <RecipeCard key={recipe.id} recipe={recipe} deleteRecipe={deleteRecipe} />
+      <RecipeCard
+        key={recipe.id}
+        recipe={recipe}
+        favoriteRecipes={favoriteRecipes}
+        addFavorite={addFavorite}
+        removeFavorite={removeFavorite}
+      />
     );
   });
 
-  let str = `${parameter.type}`;
-  const arr = str.split(" ");
-  for (var i = 0; i < arr.length; i++) {
-    arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
-  }
-  const capitalString = arr.join(" ");
+  //Utility function to capitalize the first letter of the cuisine type and/or the title of each page.
+  //Cuisine names/page titles are dynamically obtained using useParams.
+  const capitalString = toCapitalCase(parameter.type);
 
   return (
     <motion.div
