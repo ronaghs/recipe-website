@@ -17,7 +17,7 @@ export function SearchBar({ onChange, value, onKeyPress }) {
             value={value}
             type="search"
             placeholder="Search..."
-            autoFocus // Add autoFocus prop to automatically focus the input
+            autoFocus //  autoFocus prop to automatically focus the input
           />
         </InputGroup>
       </Stack>

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../../styles.css";
 import { RecipeCard } from "../Common/RecipeCard";
+import { useFavorites } from "../../utils/useFavorites";
 
 export function Popular() {
   const [popular, setPopular] = useState([]);
-  const [favoriteRecipes, setFavoriteRecipes] = useState([]);
+  const { favoriteRecipes, addFavorite, removeFavorite } = useFavorites();
 
   useEffect(() => {
     getPopular();
@@ -25,18 +26,18 @@ export function Popular() {
     }
   };
 
-  const deleteRecipe = (recipe) => {
-    const key = `recipe_${recipe.id}`;
-    localStorage.removeItem(key);
-    const newFavorites = favoriteRecipes.filter((fav) => fav.id !== recipe.id);
-    setFavoriteRecipes(newFavorites);
-  };
-
+  //Destructure favoriteRecipes array, addFavorite function, and removeFavorite function from the useFavorites() hook.
   const filteredPopular = popular.filter((recipe) => recipe.id !== 715419);
 
   const recipes = filteredPopular.map((recipe) => {
     return (
-      <RecipeCard key={recipe.id} recipe={recipe} deleteRecipe={deleteRecipe} />
+      <RecipeCard
+        key={recipe.id}
+        recipe={recipe}
+        favoriteRecipes={favoriteRecipes}
+        addFavorite={addFavorite}
+        removeFavorite={removeFavorite}
+      />
     );
   });
 

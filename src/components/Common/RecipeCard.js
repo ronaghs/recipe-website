@@ -26,6 +26,9 @@ export function RecipeCard(props) {
               src={props.recipe.image}
               alt={props.recipe.title}
               borderRadius="lg"
+              loading="lazy"
+              width="20rem"
+              height="13rem"
             />
           </div>
           <Stack mt="0" spacing="1">

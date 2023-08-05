@@ -58,7 +58,8 @@ export function DividerCard() {
           <Image
             className="drinkImage"
             objectFit="cover"
-            maxW={{ base: "100%", sm: "200px" }}
+            width={"200px"}
+            height={"160px"}
             src={divider.image}
             alt={divider.alt}
           />

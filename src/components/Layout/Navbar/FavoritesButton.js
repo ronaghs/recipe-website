@@ -6,10 +6,10 @@ import "../../../styles.css";
 
 function Favorites() {
   return (
-    <div className="login">
-      <Link to={"/Favorite/meals"}>
-        <Button colorScheme="red" aria-label="View favorite recipes">
-          <FaHeart className="userIcon" />
+    <div className="favoritesIcon">
+      <Link to="/Favorite/meals">
+        <Button colorScheme="red" aria-label="View favorite recipes" size="md">
+          <FaHeart className="heartIcon" />{" "}
         </Button>
       </Link>
     </div>
