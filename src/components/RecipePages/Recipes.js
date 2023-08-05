@@ -8,7 +8,7 @@ import "../../styles.css";
 import { ListItem, List, Checkbox, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-export function Recipes() {
+function Recipes() {
   const [recipe, setRecipe] = useState({});
   const [active, setActive] = useState("Recipe");
   const [nutritionImage, setNutritionImage] = useState(null);
@@ -118,3 +118,5 @@ export function Recipes() {
     </motion.div>
   );
 }
+
+export default Recipes;

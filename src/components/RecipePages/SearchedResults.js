@@ -5,7 +5,7 @@ import { Cuisines } from "../Layout/Cuisines";
 import { useParams } from "react-router-dom";
 import { RecipeCard } from "../Common/RecipeCard";
 
-export function SearchedResults() {
+function SearchedResults() {
   const [searchResults, setSearchResults] = useState([]);
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
   let parameter = useParams();
@@ -63,3 +63,5 @@ export function SearchedResults() {
     </div>
   );
 }
+
+export default SearchedResults;

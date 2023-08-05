@@ -5,7 +5,7 @@ import { RecipeCard } from "../Common/RecipeCard";
 import { toCapitalCase } from "../../utils/toCapitalCase";
 import { useFavorites } from "../../utils/useFavorites";
 
-export function EasyMeals() {
+function EasyMeals() {
   const [easyMeals, setEasyMeals] = useState([]);
 
   //Destructure favoriteRecipes array, addFavorite function, and removeFavorite function from the useFavorites() hook.
@@ -45,3 +45,5 @@ export function EasyMeals() {
 
   return <div className="card">{recipes}</div>;
 }
+
+export default EasyMeals;

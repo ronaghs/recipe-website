@@ -7,7 +7,7 @@ import { Divider } from "@chakra-ui/react";
 import { Greeting } from "./Greeting";
 import { motion } from "framer-motion";
 
-export function MainPage() {
+function MainPage() {
   return (
     <motion.div
       className="mainPage"
@@ -25,3 +25,5 @@ export function MainPage() {
     </motion.div>
   );
 }
+
+export default MainPage;

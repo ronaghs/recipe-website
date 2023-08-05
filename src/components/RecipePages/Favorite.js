@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { toCapitalCase } from "../../utils/toCapitalCase";
 import { useFavorites } from "../../utils/useFavorites";
 
-export function Favorite() {
+function Favorite() {
   const [favoriteRecipes, setFavoriteRecipes] = useState([]);
 
   useEffect(() => {
@@ -52,3 +52,5 @@ export function Favorite() {
     </motion.div>
   );
 }
+
+export default Favorite;

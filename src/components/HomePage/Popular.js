@@ -18,7 +18,7 @@ export function Popular() {
       setPopular(JSON.parse(checkLocalStorage));
     } else {
       const api = await fetch(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=81&type=dinner&tags=dinner&addRecipeInformation=true&instructionsRequired=true&sort=popularity&sortDirection=desc`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=41&type=dinner&tags=dinner&addRecipeInformation=true&instructionsRequired=true&sort=popularity&sortDirection=desc`
       );
       const data = await api.json();
       localStorage.setItem("popular", JSON.stringify(data.results));

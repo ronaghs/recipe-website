@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { toCapitalCase } from "../../utils/toCapitalCase";
 import { useFavorites } from "../../utils/useFavorites";
 
-export function Diets() {
+function Diets() {
   const [mealType, setMealType] = useState([]);
 
   //Destructure favoriteRecipes array, addFavorite function, and removeFavorite function from the useFavorites() hook.
@@ -63,3 +63,5 @@ export function Diets() {
     </motion.div>
   );
 }
+
+export default Diets;

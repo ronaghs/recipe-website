@@ -11,7 +11,7 @@ import { useFavorites } from "../../utils/useFavorites";
 
 import { motion } from "framer-motion";
 
-export function CuisineFilters() {
+function CuisineFilters() {
   const [mealType, setMealType] = useState([]);
 
   //Destructure favoriteRecipes array, addFavorite function, and removeFavorite function from the useFavorites() hook.
@@ -68,3 +68,5 @@ export function CuisineFilters() {
     </motion.div>
   );
 }
+
+export default CuisineFilters;
