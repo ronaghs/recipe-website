@@ -24,7 +24,6 @@ function QuickEasyMeals() {
     );
     const data = await api.json();
     setMealType(data.results);
-    console.log(data);
   };
 
   useEffect(() => {

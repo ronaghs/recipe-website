@@ -18,7 +18,6 @@ function SearchedResults() {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&query=${query}&number=40&addRecipeInformation=true&instructionsRequired=true&sort=popularity&sortDirection=desc`
     );
-    console.log(api);
     const data = await api.json();
     setSearchResults(data.results);
   };
@@ -32,7 +31,6 @@ function SearchedResults() {
 
   useEffect(() => {
     getSearch(parameter.search);
-    console.log(parameter.search);
   }, [parameter.search]);
 
   const recipes = searchResults.map((recipe) => {

@@ -24,14 +24,12 @@ function Cocktails() {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=40&type=drink,beverage&addRecipeInformation=true&instructionsRequired=true&sort=popularity&sortDirection=desc&minAlcohol=1`
     );
-    console.log(api);
     const data = await api.json();
     setDrinkType(data.results);
   };
 
   useEffect(() => {
     getDrinkType(parameter.type);
-    console.log(parameter.type);
   }, [parameter.type]);
 
   const recipes = drinkType.map((recipe) => {

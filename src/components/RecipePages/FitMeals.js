@@ -28,7 +28,6 @@ function FitMeals() {
 
   useEffect(() => {
     getMealType(parameter.type);
-    console.log(parameter.type);
   }, [parameter.type]);
 
   const recipes = mealType.map((recipe) => {

@@ -26,7 +26,6 @@ export function SearchModal() {
   const searchHandler = () => {
     if (userInput.trim() !== "") {
       navigate("/search/" + userInput);
-      console.log("Search performed");
       onClose();
     }
   };
@@ -63,7 +62,7 @@ export function SearchModal() {
                 onChange={handleInputChange}
                 value={userInput}
                 onKeyPress={handleKeyPress}
-                ref={initialRef} // Add ref prop to focus the input
+                refs={initialRef} // Add ref prop to focus the input
               />
             </FormControl>
           </ModalBody>

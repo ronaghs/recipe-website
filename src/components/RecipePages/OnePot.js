@@ -24,12 +24,10 @@ function OnePot() {
     );
     const data = await api.json();
     setMealType(data.results);
-    console.log(api);
   };
 
   useEffect(() => {
     getMealType(parameter.type);
-    console.log(parameter.type);
   }, [parameter.type]);
 
   const recipes = mealType.map((recipe) => {

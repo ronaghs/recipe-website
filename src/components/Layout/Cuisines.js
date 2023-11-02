@@ -8,7 +8,7 @@ export function Cuisines() {
       <div className="foodIcons">
         <nav className="foodPics">
           <NavLink
-            activeClassName="activeCuisine"
+            activeclassname="activeCuisine"
             aria-label="Mexican recipes"
             to={"/cuisine/mexican"}
           >
@@ -20,7 +20,7 @@ export function Cuisines() {
       <div className="foodIcons">
         <nav className="foodPics">
           <NavLink
-            activeClassName="activeCuisine"
+            activeclassname="activeCuisine"
             aria-label="American recipes"
             to={"/cuisine/american"}
           >
@@ -32,7 +32,7 @@ export function Cuisines() {
       <div className="foodIcons">
         <nav className="foodPics">
           <NavLink
-            activeClassName="activeCuisine"
+            activeclassname="activeCuisine"
             aria-label="Chinese recipes"
             to={"/cuisine/chinese"}
           >
@@ -44,7 +44,7 @@ export function Cuisines() {
       <div className="foodIcons">
         <nav className="foodPics">
           <NavLink
-            activeClassName="activeCuisine"
+            activeclassname="activeCuisine"
             aria-label="Italian recipes"
             to={"/cuisine/italian"}
           >
@@ -56,7 +56,7 @@ export function Cuisines() {
       <div className="foodIcons">
         <nav className="foodPics">
           <NavLink
-            activeClassName="activeCuisine"
+            activeclassname="activeCuisine"
             aria-label="Japanese recipes"
             to={"/cuisine/japanese"}
           >
@@ -69,7 +69,7 @@ export function Cuisines() {
         <nav className="foodPics">
           <NavLink
             aria-label="Mediterranean recipes"
-            activeClassName="activeCuisine"
+            activeclassname="activeCuisine"
             to={"/cuisine/mediterranean"}
           >
             🥙
@@ -80,7 +80,7 @@ export function Cuisines() {
       <div className="foodIcons">
         <nav className="foodPics">
           <NavLink
-            activeClassName="activeCuisine"
+            activeclassname="activeCuisine"
             aria-label="Indian recipes"
             to={"/cuisine/indian"}
           >
@@ -92,7 +92,7 @@ export function Cuisines() {
       <div className="foodIcons">
         <nav className="foodPics">
           <NavLink
-            activeClassName="activeCuisine"
+            activeclassname="activeCuisine"
             aria-label="Korean recipes"
             to={"/cuisine/korean"}
           >

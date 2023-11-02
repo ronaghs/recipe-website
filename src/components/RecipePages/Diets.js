@@ -22,14 +22,12 @@ function Diets() {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=40&type=main course,side dish,appetizer,salad,snack&addRecipeInformation=true&instructionsRequired=true&sort=popularity&sortDirection=desc&diet=${type},tags=${type}`
     );
-    console.log(api);
     const data = await api.json();
     setMealType(data.results);
   };
 
   useEffect(() => {
     getMealType(parameter.type);
-    console.log(parameter.type);
   }, [parameter.type]);
 
   const recipes = mealType.map((recipe) => {

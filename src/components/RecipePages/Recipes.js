@@ -7,6 +7,7 @@ import { Image } from "@chakra-ui/react";
 import "../../styles.css";
 import { ListItem, List, Checkbox, Stack } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import Footer from "../Layout/Footer";
 
 function Recipes() {
   const [recipe, setRecipe] = useState({});
@@ -18,7 +19,6 @@ function Recipes() {
     const api = await fetch(
       `https://api.spoonacular.com/recipes/${parameter.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
     );
-    console.log(api);
     const data = await api.json();
     setRecipe(data);
   };

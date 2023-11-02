@@ -28,10 +28,8 @@ function Meals() {
 
   useEffect(() => {
     getMealType(parameter.type);
-    console.log(parameter.type);
   }, [parameter.type]);
 
-  console.log(mealType);
   const recipes = mealType.map((recipe) => {
     return (
       <RecipeCard

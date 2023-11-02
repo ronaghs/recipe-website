@@ -6,6 +6,7 @@ import { Popular } from "./Popular";
 import { Divider } from "@chakra-ui/react";
 import { Greeting } from "./Greeting";
 import { motion } from "framer-motion";
+import Footer from "../Layout/Footer";
 
 function MainPage() {
   return (

@@ -27,7 +27,6 @@ function EasyMeals() {
       const data = await api.json();
       localStorage.setItem("easyMeals", JSON.stringify(data.recipes));
       setEasyMeals(data.recipes);
-      console.log(data);
     }
   };
 
