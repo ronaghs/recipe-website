@@ -18,7 +18,7 @@ Culinary Quest is my first project, serving as a recipe website that allows user
 
 [![Video Demo](https://img.youtube.com/vi/pjeq0Pcm_-g/0.jpg)](https://www.youtube.com/watch?v=pjeq0Pcm_-g)
 
-### Technolgies
+### Technologies
 
 - React
 - Spoonacular API
