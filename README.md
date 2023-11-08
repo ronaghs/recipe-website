@@ -1,7 +1,7 @@
 # Culinary Quest
 
 Website link:
-[CulinaryQuest](https://6543d041daa3b316374267b6--earnest-unicorn-dc17a8.netlify.app/)
+[CulinaryQuest](https://resilient-kataifi-e6b3b7.netlify.app/)
 
 ## Utilizing the Spoonacular API to obtain various dishes based on a multitude of criteria and providing recipes, ingredients, and nutrition facts.
 
